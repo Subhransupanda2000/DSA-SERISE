@@ -45,15 +45,7 @@ class Linkedlist {
         System.out.println();
     }
 
-    public int getSize() {
-        int size = 0;
-        Node current = head;
-        while (current != null) {
-            size++;
-            current = current.next;
-        }
-        return size;
-    }
+
 
     public void removeFirst() {
         if (head != null) {
@@ -66,13 +58,13 @@ class Linkedlist {
         list.addLast("is");
         list.addLast("a");
         list.addLast("list");
-        list.getLast();
+
 
         list.addFirst("this");
-        list.getLast();
-        System.out.println(list.size());
+
+
 
         list.removeFirst();
-        list.getLast();
+
     }
 }
