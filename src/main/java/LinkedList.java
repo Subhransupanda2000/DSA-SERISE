@@ -1,6 +1,4 @@
-import java.util.LinkedList;
-
-class Linkedlist {
+class LinkedList {
     Node head;
 
     public class Node {
@@ -54,7 +52,7 @@ class Linkedlist {
     }
 
     public static void main(String args[]) {
-        LinkedList list = new LinkedList();
+        java.util.LinkedList list = new java.util.LinkedList();
         list.addLast("is");
         list.addLast("a");
         list.addLast("list");
