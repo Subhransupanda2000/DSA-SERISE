@@ -8,8 +8,7 @@ public class BalancedBrackets {
     static boolean areBracketsBalanced(String expr)
     {
         // Using ArrayDeque is faster than using Stack class
-        Deque<Character> stack
-                = new ArrayDeque<Character>();
+        Stack<Character>str=new Stack<>();
 
         // Traversing the Expression
         for (int i = 0; i < expr.length(); i++) {
@@ -17,31 +16,31 @@ public class BalancedBrackets {
 
             if (x == '(' || x == '[' || x == '{') {
                 // Push the element in the stack
-                stack.push(x);
+                str.push(x);
                 continue;
             }
 
             // If current character is not opening
             // bracket, then it must be closing. So stack
             // cannot be empty at this point.
-            if (stack.isEmpty())
+            if (str.isEmpty())
                 return false;
             char check;
             switch (x) {
                 case ')':
-                    check = stack.pop();
+                    check = str.pop();
                     if (check == '{' || check == '[')
                         return false;
                     break;
 
                 case '}':
-                    check = stack.pop();
+                    check = str.pop();
                     if (check == '(' || check == '[')
                         return false;
                     break;
 
                 case ']':
-                    check = stack.pop();
+                    check = str.pop();
                     if (check == '(' || check == '{')
                         return false;
                     break;
@@ -49,7 +48,7 @@ public class BalancedBrackets {
         }
 
         // Check Empty Stack
-        return (stack.isEmpty());
+        return (str.isEmpty());
     }
 
     // Driver code
